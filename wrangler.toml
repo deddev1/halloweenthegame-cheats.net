@@ -14,5 +14,5 @@ custom_domain = true
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
-# No slash rewrites — keeps /sitemap.xml fetchable without redirect quirks for GSC.
-html_handling = "none"
+# Required so / and /about/ resolve to index.html (none breaks every HTML page).
+html_handling = "auto-trailing-slash"
