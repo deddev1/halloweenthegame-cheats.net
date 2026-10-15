@@ -51,7 +51,7 @@ const pictureMedia = desktopOnly ? '(min-width: 1024px)' : undefined;
         width={width}
         height={height}
         loading={loading}
-        decoding="async"
+        decoding={fetchPriority === 'high' ? 'sync' : 'async'}
         fetchpriority={fetchPriority}
         sizes={pictureSizes}
         class={className}
@@ -64,7 +64,7 @@ const pictureMedia = desktopOnly ? '(min-width: 1024px)' : undefined;
       width={width}
       height={height}
       loading={loading}
-      decoding="async"
+      decoding={fetchPriority === 'high' ? 'sync' : 'async'}
       fetchpriority={fetchPriority}
       class={className}
     />

@@ -13,9 +13,12 @@ type CarouselInstance = {
 };
 
 function restartProgress(progressEl: HTMLElement) {
+  // Restart the CSS animation on the next frame. Reading offsetWidth here
+  // forces a synchronous layout after the style write.
   progressEl.style.animation = 'none';
-  void progressEl.offsetWidth;
-  progressEl.style.animation = `hero-embla-progress ${HERO_AUTOPLAY_MS}ms linear forwards`;
+  requestAnimationFrame(() => {
+    progressEl.style.animation = `hero-embla-progress ${HERO_AUTOPLAY_MS}ms linear forwards`;
+  });
 }
 
 function bindHeroDots(wrapper: HTMLElement, api: EmblaApi, onUserSelect: () => void) {
@@ -64,11 +67,6 @@ function bindHeroDots(wrapper: HTMLElement, api: EmblaApi, onUserSelect: () => v
   setActive();
 }
 
-function isInViewport(el: HTMLElement) {
-  const rect = el.getBoundingClientRect();
-  return rect.bottom > 40 && rect.top < window.innerHeight - 40;
-}
-
 async function initHeroCarousels(root: ParentNode = document) {
   const nodes = [...root.querySelectorAll<HTMLElement>('[data-hero-embla]')].filter(
     (node) => node.dataset.heroEmblaReady !== 'true' && node.dataset.heroEmblaPending !== 'true',
@@ -112,6 +110,7 @@ async function initHeroCarousels(root: ParentNode = document) {
 
     const api = instance.api;
     let timer: number | undefined;
+    let inView = false;
 
     const stop = () => {
       if (timer != null) {
@@ -122,9 +121,9 @@ async function initHeroCarousels(root: ParentNode = document) {
 
     const play = () => {
       stop();
-      if (reducedMotion || document.hidden || !isInViewport(carouselRoot)) return;
+      if (reducedMotion || document.hidden || !inView) return;
       timer = window.setInterval(() => {
-        if (document.hidden || !isInViewport(carouselRoot)) return;
+        if (document.hidden || !inView) return;
         api.scrollNext();
       }, HERO_AUTOPLAY_MS);
     };
@@ -141,14 +140,13 @@ async function initHeroCarousels(root: ParentNode = document) {
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry) return;
-        if (entry.isIntersecting && !document.hidden) play();
+        inView = entry.isIntersecting;
+        if (inView && !document.hidden) play();
         else stop();
       },
       { threshold: 0.15 },
     );
     io.observe(carouselRoot);
-
-    requestAnimationFrame(play);
   });
 }
 
@@ -165,10 +163,16 @@ export function setupHeroEmbla() {
     void initHeroCarousels();
   };
 
-  run();
+  const schedule = () => {
+    window.requestIdleCallback?.(run) ?? window.setTimeout(run, 1);
+  };
+
+  // Carousel runtime is off the LCP path; start it after the first paint.
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 
   if (heroEmblaWired) return;
   heroEmblaWired = true;
-  document.addEventListener('astro:page-load', run);
-  document.addEventListener('astro:after-swap', run);
+  document.addEventListener('astro:page-load', schedule);
+  document.addEventListener('astro:after-swap', schedule);
 }

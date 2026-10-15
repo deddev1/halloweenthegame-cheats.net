@@ -23,6 +23,7 @@ import { Button } from '@/components/starwind/button';
 import { Prose } from '@/components/starwind/prose';
 import BlogPostCta from '../../components/BlogPostCta.astro';
 import { normalizeInternalPath, ROUTES } from '../../utils/path';
+import { DEFAULT_IMAGE_WIDTHS, responsiveSrcSet, webpSrc } from '../../utils/responsiveImage';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -35,6 +36,9 @@ if (!post) {
   return Astro.redirect('/blog/');
 }
 
+const articleImageSizes = '(min-width: 768px) 640px, 100vw';
+const articleLcp = webpSrc(post.image, DEFAULT_IMAGE_WIDTHS[0]);
+const articleLcpSrcSet = responsiveSrcSet(post.image, DEFAULT_IMAGE_WIDTHS);
 const postPath = `/blog/${post.slug}/`;
 const breadcrumbs = [
   { name: 'Home', path: '/' },
@@ -86,6 +90,16 @@ const published = parseBlogDate(post.date);
     breadcrumbSchema(breadcrumbs),
   ]}
 >
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href={articleLcp}
+    imagesrcset={articleLcpSrcSet}
+    imagesizes={articleImageSizes}
+    type="image/webp"
+    fetchpriority="high"
+  />
   <article class="py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
@@ -104,7 +118,7 @@ const published = parseBlogDate(post.date);
               height={540}
               loading="eager"
               fetchPriority="high"
-              sizes="(min-width: 768px) 720px, 100vw"
+              sizes={articleImageSizes}
               class="w-full object-cover"
             />
           </figure>

@@ -9,11 +9,14 @@ import { t } from '../i18n';
 import { resolvePageSeo } from '../config/seo';
 import { faqPageSchema, organizationSchema, websiteSchema } from '../utils/schema';
 import { getLandingFaqs } from '../data/faq';
-import { webpSrc } from '../utils/responsiveImage';
+import { heroSlides } from '../data/products';
+import { HERO_IMAGE_SIZES, HERO_IMAGE_WIDTHS, responsiveSrcSet, webpSrc } from '../utils/responsiveImage';
 
 const seo = resolvePageSeo('/');
 const homeFaqs = getLandingFaqs();
-const heroLcpImage = webpSrc('/images/gameplay/halloween-the-game-esp-wallhack.png', 512);
+const heroSrc = heroSlides[0]!.src;
+const heroLcpImage = webpSrc(heroSrc, HERO_IMAGE_WIDTHS[0]);
+const heroLcpSrcSet = responsiveSrcSet(heroSrc, HERO_IMAGE_WIDTHS);
 ---
 
 <BaseLayout
@@ -26,8 +29,9 @@ const heroLcpImage = webpSrc('/images/gameplay/halloween-the-game-esp-wallhack.p
     rel="preload"
     as="image"
     href={heroLcpImage}
+    imagesrcset={heroLcpSrcSet}
+    imagesizes={HERO_IMAGE_SIZES}
     type="image/webp"
-    media="(min-width: 1024px)"
     fetchpriority="high"
   />
   <HeroSection />
