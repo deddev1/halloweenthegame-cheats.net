@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /go/
+
+Sitemap: https://halloweenthegamecheats.net/sitemap.xml
+Sitemap: https://halloweenthegamecheats.net/sitemap-pages.xml
+Sitemap: https://halloweenthegamecheats.net/sitemap-products.xml
+Sitemap: https://halloweenthegamecheats.net/sitemap-blog.xml
+Sitemap: https://halloweenthegamecheats.net/sitemap-forum.xml
+
+# RSS: https://halloweenthegamecheats.net/rss.xml

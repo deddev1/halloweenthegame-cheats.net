@@ -1,0 +1,207 @@
+{
+  "gameplay": [
+    {
+      "file": "halloween-the-game-esp-wallhack.png",
+      "alt": "Halloween the Game cheat ESP overlay showing item markers Master Key Kitchen Knife First Aid and player box with HP on Lillian Myers",
+      "match": "161300"
+    },
+    {
+      "file": "halloween-the-game-squad-esp.png",
+      "alt": "Halloween the Game Survivor ESP with red boxes skeletons names distances and HP bars on multiple players in a garage",
+      "match": "161251"
+    },
+    {
+      "file": "halloween-the-game-player-esp.png",
+      "alt": "Halloween the Game cheat gameplay with skeleton ESP box ESP name tags HP bars and head aim markers on Myers and survivors",
+      "match": "161138"
+    },
+    {
+      "file": "halloween-the-game-loot-radar.png",
+      "alt": "Halloween the Game world NPC ESP on Haddonfield street with Resident Medkit Weapon Phone Car Escape labels and orange skeleton highlight",
+      "match": "161151"
+    },
+    {
+      "file": "halloween-the-game-long-range-esp.png",
+      "alt": "Halloween the Game weapon and item ESP showing shotguns axes phones fuses health spray labels with distances and 2D radar",
+      "match": "161244"
+    },
+    {
+      "file": "halloween-the-game-combat-esp.png",
+      "alt": "Halloween the Game cheat ESP on Virginia St with Sedan Key Fuse Repair Kit weapon markers skeleton box and Bloodlust status",
+      "match": "161311"
+    },
+    {
+      "file": "halloween-the-game-myers-shape-options.png",
+      "alt": "Halloween the Game Michael Myers Shape Jump ability menu with The Shape in mask and jumpsuit at night",
+      "match": "161335"
+    },
+    {
+      "file": "halloween-the-game-myers-weapon.png",
+      "alt": "Halloween the Game Michael Myers holding kitchen knife with melee weapon select bar axe sledgehammer pitchfork",
+      "match": "161328"
+    },
+    {
+      "file": "halloween-the-game-survivor-items.png",
+      "alt": "Halloween the Game survivor holding first aid spray with item hotbar tools medical kits and equipment icons",
+      "match": "161349"
+    },
+    {
+      "file": "halloween-the-game-survivor-outfits.png",
+      "alt": "Halloween the Game survivor outfit customization menu with blonde survivor in green turtleneck in a dark workshop",
+      "match": "161342"
+    },
+    {
+      "file": "halloween-the-game-aimbot-combat.png",
+      "alt": "Halloween the Game aim assist and skeleton ESP cheat overlay with name tags HP and head markers",
+      "from": "halloween-the-game-player-esp.png"
+    },
+    {
+      "file": "halloween-the-game-radar-hack.png",
+      "alt": "Halloween the Game 2D radar and item ESP cheat overlay with weapon markers and minimap",
+      "from": "halloween-the-game-long-range-esp.png"
+    },
+    {
+      "file": "halloween-the-game-auto-aim.png",
+      "alt": "Halloween the Game aim assist head markers with red box ESP skeletons and HP bars",
+      "from": "halloween-the-game-squad-esp.png"
+    },
+    {
+      "file": "halloween-the-game-skin-changer.png",
+      "alt": "Halloween the Game survivor cosmetic outfit menu used as skin changer preview gameplay",
+      "from": "halloween-the-game-survivor-outfits.png"
+    },
+    {
+      "file": "halloween-the-game-thermal-esp.png",
+      "alt": "Halloween the Game ESP wallhack cheat with item distance labels and highlighted player through the dark map",
+      "from": "halloween-the-game-esp-wallhack.png"
+    },
+    {
+      "file": "halloween-the-game-chase-fight-esp.png",
+      "alt": "Halloween the Game chase ESP showing multiple survivors with boxes skeletons names and distances",
+      "from": "halloween-the-game-squad-esp.png"
+    },
+    {
+      "file": "halloween-the-game-match-wallhack.png",
+      "alt": "Halloween the Game match wallhack with dense world ESP labels residents weapons phones and escape routes",
+      "from": "halloween-the-game-loot-radar.png"
+    },
+    {
+      "file": "halloween-the-game-haddonfield-esp.png",
+      "alt": "Halloween the Game Haddonfield ESP on Virginia St with objective keys weapons and skeleton box overlay",
+      "from": "halloween-the-game-combat-esp.png"
+    },
+    {
+      "file": "halloween-the-game-aimbot-lock.png",
+      "alt": "Halloween the Game aim lock markers on heads with skeleton ESP boxes names and HP readouts",
+      "from": "halloween-the-game-player-esp.png"
+    },
+    {
+      "file": "halloween-the-game-chams-esp.png",
+      "alt": "Halloween the Game chams style orange skeleton highlight with world ESP item labels on Haddonfield",
+      "from": "halloween-the-game-loot-radar.png"
+    }
+  ],
+  "captions": {
+    "halloween-the-game-esp-wallhack.png": {
+      "alt": "Halloween the Game cheat ESP overlay showing item markers Master Key Kitchen Knife First Aid and player box with HP on Lillian Myers",
+      "caption": "World & player ESP",
+      "captionDesc": "Item distance markers and player box ESP with health and stamina."
+    },
+    "halloween-the-game-squad-esp.png": {
+      "alt": "Halloween the Game Survivor ESP with red boxes skeletons names distances and HP bars on multiple players in a garage",
+      "caption": "Survivor ESP",
+      "captionDesc": "Boxes, skeletons, names, distance and HP on survivors through walls."
+    },
+    "halloween-the-game-player-esp.png": {
+      "alt": "Halloween the Game cheat gameplay with skeleton ESP box ESP name tags HP bars and head aim markers on Myers and survivors",
+      "caption": "Skeleton & box ESP",
+      "captionDesc": "Skeleton wallhack, boxes, names and head aim markers."
+    },
+    "halloween-the-game-loot-radar.png": {
+      "alt": "Halloween the Game world NPC ESP on Haddonfield street with Resident Medkit Weapon Phone Car Escape labels and orange skeleton highlight",
+      "caption": "World / NPC ESP",
+      "captionDesc": "Residents, weapons, phones, cars and escape markers with distance."
+    },
+    "halloween-the-game-long-range-esp.png": {
+      "alt": "Halloween the Game weapon and item ESP showing shotguns axes phones fuses health spray labels with distances and 2D radar",
+      "caption": "Weapon & item ESP",
+      "captionDesc": "Weapons, keys, fuses and health items with distance readouts."
+    },
+    "halloween-the-game-combat-esp.png": {
+      "alt": "Halloween the Game cheat ESP on Virginia St with Sedan Key Fuse Repair Kit weapon markers skeleton box and Bloodlust status",
+      "caption": "Objective ESP",
+      "captionDesc": "Sedan key, fuse, repair kit and player skeleton ESP with status."
+    },
+    "halloween-the-game-myers-shape-options.png": {
+      "alt": "Halloween the Game Michael Myers Shape Jump ability menu with The Shape in mask and jumpsuit at night",
+      "caption": "Myers / Shape options",
+      "captionDesc": "Michael Myers ability loadout including Shape Jump."
+    },
+    "halloween-the-game-myers-weapon.png": {
+      "alt": "Halloween the Game Michael Myers holding kitchen knife with melee weapon select bar axe sledgehammer pitchfork",
+      "caption": "Myers weapons",
+      "captionDesc": "Myers knife and melee weapon selection overlay."
+    },
+    "halloween-the-game-survivor-items.png": {
+      "alt": "Halloween the Game survivor holding first aid spray with item hotbar tools medical kits and equipment icons",
+      "caption": "Survivor items",
+      "captionDesc": "Survivor first-aid spray and item selection hotbar."
+    },
+    "halloween-the-game-survivor-outfits.png": {
+      "alt": "Halloween the Game survivor outfit customization menu with blonde survivor in green turtleneck in a dark workshop",
+      "caption": "Survivor outfits",
+      "captionDesc": "Survivor cosmetic / outfit selection screen."
+    },
+    "halloween-the-game-aimbot-combat.png": {
+      "alt": "Halloween the Game aim assist and skeleton ESP cheat overlay with name tags HP and head markers",
+      "caption": "Aim assist ESP",
+      "captionDesc": "Aim markers with skeleton ESP and player info."
+    },
+    "halloween-the-game-radar-hack.png": {
+      "alt": "Halloween the Game 2D radar and item ESP cheat overlay with weapon markers and minimap",
+      "caption": "2D radar",
+      "captionDesc": "Minimap radar with weapon and item ESP labels."
+    },
+    "halloween-the-game-auto-aim.png": {
+      "alt": "Halloween the Game aim assist head markers with red box ESP skeletons and HP bars",
+      "caption": "Aim markers",
+      "captionDesc": "Head aim markers with box and skeleton ESP."
+    },
+    "halloween-the-game-skin-changer.png": {
+      "alt": "Halloween the Game survivor cosmetic outfit menu used as skin changer preview gameplay",
+      "caption": "Cosmetics",
+      "captionDesc": "Survivor outfit customization preview."
+    },
+    "halloween-the-game-thermal-esp.png": {
+      "alt": "Halloween the Game ESP wallhack cheat with item distance labels and highlighted player through the dark map",
+      "caption": "ESP wallhack",
+      "captionDesc": "Through-wall item and player ESP in Haddonfield."
+    },
+    "halloween-the-game-chase-fight-esp.png": {
+      "alt": "Halloween the Game chase ESP showing multiple survivors with boxes skeletons names and distances",
+      "caption": "Chase ESP",
+      "captionDesc": "Multi-survivor ESP during a chase in a garage."
+    },
+    "halloween-the-game-match-wallhack.png": {
+      "alt": "Halloween the Game match wallhack with dense world ESP labels residents weapons phones and escape routes",
+      "caption": "Match wallhack",
+      "captionDesc": "Full world ESP labels across a Haddonfield street."
+    },
+    "halloween-the-game-haddonfield-esp.png": {
+      "alt": "Halloween the Game Haddonfield ESP on Virginia St with objective keys weapons and skeleton box overlay",
+      "caption": "Haddonfield ESP",
+      "captionDesc": "Street-level objective and player ESP in Haddonfield."
+    },
+    "halloween-the-game-aimbot-lock.png": {
+      "alt": "Halloween the Game aim lock markers on heads with skeleton ESP boxes names and HP readouts",
+      "caption": "Aim lock",
+      "captionDesc": "Head aim lock with skeleton and box ESP."
+    },
+    "halloween-the-game-chams-esp.png": {
+      "alt": "Halloween the Game chams style orange skeleton highlight with world ESP item labels on Haddonfield",
+      "caption": "Chams / skeleton",
+      "captionDesc": "Glowing skeleton highlight with world ESP labels."
+    }
+  },
+  "sourceCount": 10
+}
