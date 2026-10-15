@@ -2,6 +2,15 @@
 name = "halloweenthegame-cheats-net"
 compatibility_date = "2025-10-11"
 
+# Bind custom domains so DNS records exist for GSC / crawlers.
+[[routes]]
+pattern = "halloweenthegamecheats.net"
+custom_domain = true
+
+[[routes]]
+pattern = "www.halloweenthegamecheats.net"
+custom_domain = true
+
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"

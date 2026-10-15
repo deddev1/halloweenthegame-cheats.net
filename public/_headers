@@ -1,5 +1,6 @@
 /*
   Cache-Control: public, max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
@@ -7,26 +8,45 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
-/*.webp
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.png
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.svg
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-/site.webmanifest
-  Cache-Control: public, max-age=86400
+/robots.txt
+  Cache-Control: public, max-age=3600
+  Content-Type: text/plain; charset=utf-8
 
 /sitemap.xml
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
 
-/sitemap-*.xml
+/sitemap-index.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-pages.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-products.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-blog.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-forum.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-all.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-0.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/rss.xml
+  Cache-Control: public, max-age=300
+  Content-Type: application/xml; charset=utf-8
+
+/site.webmanifest
   Cache-Control: public, max-age=86400

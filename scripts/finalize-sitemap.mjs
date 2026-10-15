@@ -181,21 +181,21 @@ for (const child of childFiles) {
   written.push({ name: child.name, lastmod, count: urls.length });
 }
 
-const indexXml = renderIndex(written);
-// GSC entry point: /sitemap.xml is the index (also mirrored as sitemap-index.xml).
-fs.writeFileSync(path.join(dist, 'sitemap.xml'), indexXml, 'utf8');
-fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
-
-// Keep a combined urlset for IndexNow + tools that expect one file of <url> entries.
 const allUrls = childFiles.flatMap((c) => byBucket[c.key]);
-fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), renderUrlset(allUrls), 'utf8');
+const allXml = renderUrlset(allUrls);
+const indexXml = renderIndex(written);
 
-// Point IndexNow at the combined urlset (not the index).
-fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), renderUrlset(allUrls), 'utf8');
+// GSC entry point: flat urlset at /sitemap.xml (indexes are flaky for fetchers).
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), allXml, 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), allXml, 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), allXml, 'utf8');
+
+// Keep a real sitemap index for tools that want child sitemaps.
+fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
 
 console.log(`Sitemap finalized: ${total} URLs`);
 for (const w of written) {
   console.log(`  ${w.name}: ${w.count}`);
 }
-console.log('  sitemap.xml / sitemap-index.xml → index');
-console.log('  sitemap-all.xml → combined urlset');
+console.log('  sitemap.xml / sitemap-all.xml → combined urlset (GSC)');
+console.log('  sitemap-index.xml → index of child sitemaps');
