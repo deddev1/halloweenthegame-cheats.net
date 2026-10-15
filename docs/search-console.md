@@ -5,8 +5,9 @@ You verify the domain at your DNS provider—no HTML meta tags in the repo.
 ## Setup (once)
 
 1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `halloweenthegamecheats.net` if it is not already there.
-2. Under **Sitemaps**, submit the index first (required):
+2. Under **Sitemaps**, submit (either works; XML is preferred):
    - `https://halloweenthegamecheats.net/sitemap.xml`
+   - fallback: `https://halloweenthegamecheats.net/sitemap.txt`
 3. Optional — submit child sitemaps too (same URLs, clearer GSC status per section):
    - `https://halloweenthegamecheats.net/sitemap-pages.xml`
    - `https://halloweenthegamecheats.net/sitemap-products.xml`

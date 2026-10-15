@@ -4,3 +4,4 @@ Allow: /
 Disallow: /go/
 
 Sitemap: https://halloweenthegamecheats.net/sitemap.xml
+Sitemap: https://halloweenthegamecheats.net/sitemap.txt

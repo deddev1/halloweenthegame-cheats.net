@@ -95,14 +95,15 @@ function bucketFor(loc) {
 
 /** @param {SitemapUrl[]} urls */
 function renderUrlset(urls) {
+  // Keep only loc + lastmod — Google ignores changefreq/priority and some fetchers
+  // choke on oversized/annotated sitemaps behind strict CDNs.
   const body = urls
-    .map((u) => {
-      const lines = [`  <url>`, `    <loc>${u.loc}</loc>`, `    <lastmod>${formatLastmod(u.lastmod)}</lastmod>`];
-      if (u.changefreq) lines.push(`    <changefreq>${u.changefreq}</changefreq>`);
-      if (u.priority) lines.push(`    <priority>${u.priority}</priority>`);
-      lines.push(`  </url>`);
-      return lines.join('\n');
-    })
+    .map(
+      (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${formatLastmod(u.lastmod)}</lastmod>
+  </url>`,
+    )
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -110,6 +111,11 @@ function renderUrlset(urls) {
 ${body}
 </urlset>
 `;
+}
+
+/** @param {SitemapUrl[]} urls */
+function renderTxt(urls) {
+  return `${urls.map((u) => u.loc).join('\n')}\n`;
 }
 
 /** @param {{ name: string, lastmod: string }[]} children */
@@ -183,10 +189,12 @@ for (const child of childFiles) {
 
 const allUrls = childFiles.flatMap((c) => byBucket[c.key]);
 const allXml = renderUrlset(allUrls);
+const allTxt = renderTxt(allUrls);
 const indexXml = renderIndex(written);
 
-// GSC entry point: flat urlset at /sitemap.xml (indexes are flaky for fetchers).
+// GSC entry points: flat urlset + plain-text sitemap (both supported by Google).
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), allXml, 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap.txt'), allTxt, 'utf8');
 fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), allXml, 'utf8');
 fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), allXml, 'utf8');
 
@@ -197,5 +205,5 @@ console.log(`Sitemap finalized: ${total} URLs`);
 for (const w of written) {
   console.log(`  ${w.name}: ${w.count}`);
 }
-console.log('  sitemap.xml / sitemap-all.xml → combined urlset (GSC)');
+console.log('  sitemap.xml / sitemap.txt → combined (GSC)');
 console.log('  sitemap-index.xml → index of child sitemaps');
